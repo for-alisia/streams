@@ -46,6 +46,7 @@ const mapStateToProps = ({ auth: { isSignedIn } }) => ({ isSignedIn });
 
 export default connect(mapStateToProps, { signIn, signOut })(GoogleAuth);
 
+/** Class-based variation */
 // class _GoogleAuth extends React.Component {
 //   componentDidMount() {
 //     window.gapi.load('client:auth2', () => {
