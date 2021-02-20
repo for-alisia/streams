@@ -1,4 +1,5 @@
-/** Libraries */
+/** Router */
+import history from '../history';
 
 /** API */
 import streams from '../api/streams';
@@ -31,6 +32,7 @@ export const createStream = (formValues) => async (dispatch, getState) => {
     const { userId } = getState().auth;
     const { data } = await streams.post('/streams', { ...formValues, userId });
     dispatch({ type: CREATE_STREAM, payload: data });
+    history.push('/');
   } catch (err) {
     console.log(err);
   }
@@ -65,8 +67,9 @@ export const deleteStream = (id) => async (dispatch) => {
 
 export const editStream = (id, formValues) => async (dispatch) => {
   try {
-    const { data } = await streams.put(`/streams/${id}`, formValues);
+    const { data } = await streams.patch(`/streams/${id}`, formValues);
     dispatch({ type: EDIT_STREAM, payload: data });
+    history.push('/');
   } catch (err) {
     console.log(err);
   }

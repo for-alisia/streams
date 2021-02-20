@@ -1,3 +1,4 @@
+// @ts-nocheck
 /** Libraries */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
@@ -15,20 +16,24 @@ const StreamList = ({ streams, fetchStreams, currentUserId, isSignedIn }) => {
     <div>
       <h2>Streams</h2>
       <div className="ui celled list">
-        {streams.map((stream) => (
-          <div className="item" key={stream.id}>
-            {stream.userId === currentUserId ? (
+        {streams.map(({ id, title, description, userId }) => (
+          <div className="item" key={id}>
+            {userId === currentUserId ? (
               <div className="right floated content">
-                <button className="ui button primary">Edit</button>
-                <button className="ui button negative">Delete</button>
+                <Link to={`/streams/edit/${id}`} className="ui button primary">
+                  Edit
+                </Link>
+                <Link to={`/streams/delete/${id}`} className="ui button negative">
+                  Delete
+                </Link>
               </div>
             ) : (
               ''
             )}
             <i className="large middle aligned icon camera" />
             <div className="content">
-              {stream.title}
-              <div className="description">{stream.description}</div>
+              {title}
+              <div className="description">{description}</div>
             </div>
           </div>
         ))}

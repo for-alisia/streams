@@ -1,6 +1,10 @@
+// @ts-nocheck
 /** Libraries */
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
+
+/** Router */
+import history from '../history';
 
 /** Components */
 import {
@@ -14,13 +18,13 @@ import { Header } from '../components/ui';
 
 const App = () => (
   <div className="ui container">
-    <Router>
+    <Router history={history}>
       <Header />
       <Route path="/" exact component={StreamList} />
       <Route path="/streams/new" exact component={StreamCreate} />
-      <Route path="/streams/edit" exact component={StreamEdit} />
-      <Route path="/streams/delete" exact component={StreamDelete} />
-      <Route path="/streams/show" exact component={StreamShow} />
+      <Route path="/streams/edit/:id" exact component={StreamEdit} />
+      <Route path="/streams/delete/:id" exact component={StreamDelete} />
+      <Route path="/streams/:id" exact component={StreamShow} />
     </Router>
   </div>
 );

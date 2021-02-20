@@ -1,13 +1,13 @@
 {
   "streams": [
     {
-      "title": "my title",
-      "description": "my stream",
+      "title": "Python programming language",
+      "description": "Code along with me!!!",
       "id": 1
     },
     {
-      "title": "New stream",
-      "description": "My new stream",
+      "title": "Someone's else stream",
+      "description": "Interesting game for averyone!",
       "id": 2
     },
     {
@@ -15,6 +15,24 @@
       "description": "Click here, it's awesome",
       "userId": "116309552525803292980",
       "id": 3
+    },
+    {
+      "title": "Programmatic Navigation",
+      "description": "Redirect to the main page afer successfull creation - code along",
+      "userId": "116309552525803292980",
+      "id": 4
+    },
+    {
+      "title": "Auto Chess - the best game ever! 2021",
+      "description": "I like this game, join me!!!",
+      "userId": "116309552525803292980",
+      "id": 5
+    },
+    {
+      "title": "Node.js master class!!!",
+      "description": "No npm, no libraries, no express! Just Node!!!",
+      "userId": "116309552525803292980",
+      "id": 6
     }
   ]
 }
