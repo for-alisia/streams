@@ -32,7 +32,9 @@ const StreamList = ({ streams, fetchStreams, currentUserId, isSignedIn }) => {
             )}
             <i className="large middle aligned icon camera" />
             <div className="content">
-              {title}
+              <Link to={`/streams/${id}`} className="header">
+                {title}
+              </Link>
               <div className="description">{description}</div>
             </div>
           </div>

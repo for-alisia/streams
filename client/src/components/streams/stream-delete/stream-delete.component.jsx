@@ -36,15 +36,12 @@ const StreamDelete = ({ stream, deleteStream, fetchStream, match }) => {
   }, [fetchStream, match]);
 
   return (
-    <div>
-      <div>Stream delete</div>
-      <Modal
-        title="DELETE STREAM"
-        content={`Are you sure you want to delete the stream: ${stream ? stream.title : ''}?`}
-        actions={actions}
-        onDismiss={onDismiss}
-      />
-    </div>
+    <Modal
+      title="DELETE STREAM"
+      content={`Are you sure you want to delete the stream: ${stream ? stream.title : ''}?`}
+      actions={actions}
+      onDismiss={onDismiss}
+    />
   );
 };
 
